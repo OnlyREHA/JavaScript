@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type</title>
+</head>
+
+<body>
+
+    <script>
+        //# 자료형(Data Type)이란 무엇인가? )
+        // -> 프로그래밍 언어에서 숫자,문자 들 여러 종류의 데이터를 구분하는 분류체계, 변수의 저장되는 값의 종류 또는 형태
+
+        //# 자바스크립트 자료형종류)
+        //=> 원시타입(기본형) vs 참조타입(참조형)
+
+        //[1] 기본형 타입 (Primitive Type) -> 값을 그대로 셋팅(할당)
+        // 숫자형 (Number)
+        // 문자,열형 (String)
+        // 불리언 (Boolean)
+        // 널 (Null)
+        // 언디파인드 (Undefind)
+        // 심볼 (Symbol)
+
+        //[2] 참조형 타입 (Reference Type) -> 값이 저장된 주소값을 셋팅(할당or참조)
+        // 객체 (Object)
+        // 배열 (Array)
+        // 함수 (Function)
+        // 맵 (Map)
+        // 셋 (Set)
+
+
+        //# Typeof 연산자)
+        //typeof 값  -> 값은 피연산자
+        //typeof (값)
+        //=> 피연산자가 어떤 자료형인지(Data Type)인지 반환
+
+        let name = "자기이름";
+        console.log(typeof name); //string
+        console.log(typeof (name)); //string
+
+        let age = 30;
+        console.log(typeof age); //number
+
+        let isThisReal = false;
+        console.log(typeof isThisReal); //boolean -> true 또는 false 만 입력
+
+        let isNullCheck = null; //의도적으로 값이 비어있음을 명시함
+        console.log(typeof isNullCheck); //object(객체)  -> 비어있음 = object
+
+        let a = undefined; //undefined -> 변수를 선언만 해줘도 자동으로 할당되는 값이다(동시에 데잋터값이기도 함)
+        let b; //선언만 하고 할당하지 않음
+
+        console.log("변수a의 타입은 = " + typeof a + "/변수 b의 타입은 =" + typeof b)
+        //출력_변수a의 타입은 = undefined/변수 b의 타입은 =undefined
+
+        console.log(`변수a의 타입은= ${a} / 변수 b의 타입은= ${b}`)
+
+        let first_class_level = "6교시";
+        let level_group_number = 30;
+
+        console.log("지금수업은 " + first_class_level + "가 진행중이고 " + level_group_number + "분이 지났습니다.")
+        console.log(`지금수업은 ${first_class_level}가 진행중이고 ${level_group_number}분이 지났습니다.`)
+
+        //출력_지금수업은 6교시가 진행중이고 30분이 지났습니다.
+
+        //# 자바스크립트 자료형에서 false로 반환되는 값
+        //[1] null
+        //->의도 적으로 값이 없다고 명시적으로 표현
+        //null은 타입체크를 하면 object(객체)로 나온다
+        //논리 연산으로 false값을 가진다.
+
+        /*  
+          if(조건문){
+           조건문이 참일때(true) 일때 실행되는 실행문
+           } else{
+           조건문이 거짓일때(false)일때 실행되는 실행문
+           }
+        */
+
+        //let isNullCheck = null;
+
+        if (isNullCheck) {
+            console.log("긍정")
+        } else {
+            console.log("부정")
+        }
+
+        //[2]값이 없다라는 의미의 빈 값 --> false
+
+        let value;
+
+        if(value){
+            console.log("값이 없음")
+        }else{
+            console.log("값이 있음")
+        }
+        
+
+        //!값 ---> 부정
+        if(!value){
+            console.log("값이 없음")
+        }else{
+            console.log("값이 있음")
+        }
+
+        console.log("안녕"/2)  
+        //NaN  (Not a Number) -->  false 반환
+
+
+        function add(a,b){
+            return a+b;
+        }
+
+        console.log(add(1,2)) //3
+        console.log(add()) //NaN
+
+
+        let someValue = 0;
+
+        if(someValue){
+            console.log("false 입니다")
+        }else{
+            console.log("true입니다")
+        }
+
+        //*자바스크립트 자료형에서 false가 반환되는것
+        //-->null , "" , undefined , 0 , NaN
+
+        console.log(100/0);
+        console.log(typeof 100/0);
+        console.log(typeof NaN); //number
+
+        //숫자형의 특수한 값들
+        //NaN, Infinity(무한대)와 같은 특수한 숫자 값들도 있다.
+
+
+
+
+        //# 동적 타입 언어
+
+        //[1]정적타입 언어
+
+        //보통 타입(Type)이라고 하면 "자료형" 
+        //일반적으로 int,double,string,char등의 타입이 있고,
+        //변수앞에 자료형을 선언하고 사용한다.
+
+        //컴파일 과정에서 자료형의 값이 틀리면 에러가 발생한다.
+        //-> int num = 10;
+        //-> inr num = 3.14; =>Err
+         
+        //이런 언어들을 정적 타입언어라고 한다(타입을 미리 지정해놔야 한다.)
+        //장점
+        //-컴파일에 타입이 미리 정해져 있으면 속도가 빠르다.
+        //-타입 에러가 사전에 발견되므로 에러가 날 확률이 적어진다.
+
+
+        //[2]동적타입 언어
+        //jaVaScript, Python과 같은 언어
+        //이러한 언어들은 변수를 만들때 변수 앞에 자료형을 선언하지 않고
+        //자료형과 관계없이 변수를 만들수있다.
+
+        //Js 같은 경우 var, let, const 키워드를 변수명 앞에 쓰고 어떤 데이터든 할당해 주면 됨
+
+        //let name = "짱구"; -> string
+        name = 20;  //number
+
+        //데이터의 타입을 자유롭게 바꿀수 있는 언어들을 "동적타입언어" 라고 한다
+        //장점
+        //-유연하고 편리하다
+        //-배우기 쉽다
+        //단점
+        //-에러의 발생률이 높다.
+
+
+    </script>
+
+</body>
+
+</html>

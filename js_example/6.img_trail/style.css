@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.main{
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main h2{
+    color: #fff;
+    font-size: 100px;
+
+}
+
+
+.main .img-1{
+    background: url(./images/img-1.jpg) no-repeat center;
+    transition-duration: 0.65s;
+}
+.main .img-2{
+    background: url(./images/img-2.jpg) no-repeat center;
+    transition-duration: 0.5s;
+    
+}
+.main .img-3{
+    background: url(./images/img-3.jpg) no-repeat center;
+    transition-duration: 0.35s;
+    
+}
+.main .img-4{
+    background: url(./images/img-4.jpg) no-repeat center;
+    transition-duration: 0.2s;
+    
+}
+.main .img-5{
+    background: url(./images/img-5.jpg) no-repeat center;
+    transition-duration: 0.05s;
+    
+}
+
+.main .img{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background-size: cover;
+    transition-timing-function: ease-out;
+}
+

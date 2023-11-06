@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+</head>
+
+<body>
+
+    <script>
+        // #if 조건문 (if문)
+        //if(조건문){괄호안에 조건문이 true이면 실행되는 실행문}
+        //false --> " ", null , undefined , 0 , NaN
+
+        /*  
+        if(조건문){
+             -조건문이 참일때의 실행문
+         }else{ 
+             -조건문이 거짓일때 실행문
+         }
+         */
+
+        //한 라인으로 사용할때 -> 괄호는 있어도 되고 , 없어도 된다
+        let bb = 200;
+        //[1]
+        if (bb == 200) {
+            console.log("200점 입니다.")
+        }
+
+        //[2]
+        if (bb == 200) console.log("200점 입니다.");
+
+        //[3]
+        if (bb == 200)
+            console.log("200점 입니다.");
+        console.log("300점 입니다.");
+
+        //블럭한에 2줄 이상일때는 {} 생략할수없다.
+
+        //[예제]
+        //false --> " ", null , undefined , 0 , NaN
+        if (0) { //실행안됨
+            console.log("나는 실행될까요?")
+        }
+
+        if (1) { //실행안됨
+            console.log("나는 실행될까요?")
+        }
+
+        //! -> (Not)
+        if (!null) {
+            console.log("부정(!)이 붙어서 true가 되었음")
+        }
+
+        let isTest = 10 > 90;
+
+        if (isTest) {
+            console.log("조건문이 참일때만 실행됨")
+        } else {
+            console.log("조건문이 거짓일때 실행됨")
+        }
+
+        // # else if --> 복수처리
+        /* 
+        if(조건문1){
+            조건문1이 참일때 실행문
+        }else if(조건문2){
+            조건문1은 거짓이고 , 조건문2가 참일때 실행
+        }else{
+            조건문1도 거짓이거 , 조건문2도 거짓일때 실행
+        }
+         */
+
+
+        let 날씨 = true;
+        if (날씨) {
+            console.log("등산을 간다")
+        } else if (조건문2) {
+            console.log("집에서 잔다")
+        }
+
+        let 나이 = 18;
+        if (나이 >= 18) {
+            console.log("성인입니다")
+        } else {
+            console.log("청소년입니다")
+        }
+
+        let 성적 = 87;
+        if (성적 >= 90) {
+            console.log("우수학생입니다")
+        } else if (성적 >= 80) {
+            console.log("준우수학생입니다")
+        } else if (성적 >= 70) {
+            console.log("잘하고 있습니다")
+        } else {
+            console.log("노력을 요합니다")
+        }
+
+
+        //     let age=prompt('나이를 입력하세요', '');
+        //     let 입장료='';
+
+        //     // || -> or , && -> and
+        //     if(age<13 || age>65){
+        //         입장료="2000원입니다."
+        //     }else if(age>=13 && age<20){
+        //         입장료="3000원입니다."
+        //     }else{
+        //         입장료="4000원입니다"
+        //     }
+
+        //     console.log(입장료)
+
+
+        //     //이중 if문
+        //     /* 
+        //     if(조건문1){
+        //         if(조건문2){
+        //             조건문1을 만족하고 조건문2도 만족할때 실행
+        //         }else{
+        //             조건문1은 만족하고 조건문2는 만족하지 않을때 실행
+        //         }
+        //     }else{
+        //         조건문 1을 만족하지 않을때의 실행문
+        //     } 
+        //     */
+
+        //     let html = 90;
+        //     let css = 45;
+        //     let javaScript = 90;
+
+        //     let 평균 = (html + css + javaScript)/3;
+        //     let 합격여부;
+
+        //     if(평균>=60){
+        //         if(html<40){
+        //             합격여부 = `html 40점미만 불합격입니다.`;
+        //         }else if(css<40){
+        //             합격여부 = `css 40점미만 불합격입니다.`;
+        //         }else if(javaScript<40){
+        //             합격여부 = `javascript 40점미만 불합격입니다.`;
+        //         }else{
+        //             합격여부 = `축하합니다! 합격입니다!!`;
+        //         }
+        //     }else{
+        //         합격여부 = `평균 ${평균}점 불합격입니다.`;
+        //     }
+
+        // console.log(합격여부)
+
+        // let HTML = Number(prompt('HTML점수를 입력하세요',''));
+        // let CSS = Number(prompt('CSS점수를 입력하세요',''));
+        // let JAVASCRIPT = Number(prompt('JAVASCRIPT점수를 입력하세요',''));
+
+        // let avg = (HTML+CSS+JAVASCRIPT)/3;
+        // let pass;
+
+        // if(avg>=60){
+        //         if(HTML<40){
+        //             pass = `html 40점미만 불합격입니다.`;
+        //         }else if(CSS<40){
+        //             pass = `css 40점미만 불합격입니다.`;
+        //         }else if(JAVASCRIPT<40){
+        //             pass = `javascript 40점미만 불합격입니다.`;
+        //         }else{
+        //             pass = `축하합니다! 합격입니다!!`;
+        //         }
+        //     }else{
+        //         pass = `평균 ${평균}점 불합격입니다.`;
+        //     }
+
+        // console.log(pass)
+
+        let 국어 = 60,
+            수학 = 97,
+            영어 = 55;
+        let 과목평균 = (국어 + 수학 + 영어) / 3;
+        console.log(과목평균) //70.66666666666667
+
+        let 반올림 = Math.round(과목평균)
+        console.log(반올림) //71
+
+        let 올림 = Math.ceil(과목평균)
+        console.log(올림) //71
+
+        let 내림 = Math.floor(과목평균)
+        console.log(내림) //70
+
+        //소수점 반올림
+        let 소수점 = 과목평균.toFixed(2) //소수점이하자리(마지막자리 반올림) 
+        console.log(소수점) //70.67
+
+
+
+        // # 삼항연산자(조건부 연산자) -> 피연산자가 세개이기 때문에 삼항연산자
+
+
+        let 키 = 154;
+
+        if (키 >= 160) {
+            console.log("당신은 청룡열차를 탈수있는 키입니다.")
+        } else {
+            console.log("당신은 청룡열차를 탈수없는 키입니다.")
+        }
+
+        //let result = 조건문? a:b;
+        //a는 조건문이 참일때의 실행문
+        //b는 조건문이 거짓일때의 실행문
+
+        let result = (키 >= 160) ? console.log("당신은 청룡열차를 탈수있는 키입니다") :
+            console.log("당신은 청룡열차를 탈수없는 키입니다.")
+
+
+        let 점수 = 66;
+        let 피자 = (점수 >= 80) ? console.log("피자를 시키거라") : console.log("들어가 공부하거라")
+
+
+        let 용돈 = 31000;
+
+        let 가방1 = 50000;
+        let 가방2 = 45000;
+        let 가방3 = 30000;
+
+        let 가방 = (용돈 >= 50000) ? console.log(가방1 + "원 가방구입") :
+            (용돈 >= 40000) ? console.log(가방2 + "원 가방구입") : console.log(가방3 + "원 가방구입")
+
+        //제어문 종류
+        //조건문 -- if , switch
+        //반목문 -- for , while , do while
+        //중지 , 건너뛰기 -- break , continue
+
+        //switch 조건문
+        //[특징]
+        //if..else -> 조건문이 불리언 값으로 평가 (true) , (false)
+        //switch 조건문 --> 평가 : 숫자값 또는 문자(열)의 값 (분기처리할때 사용)
+
+        /* 
+        switch(값){
+            case 값1:
+                실행문 (값이 값1일때의 실행문);
+                break; -> switch문 종료
+            case 값2:
+                실행문 (값이 값2일때의 실행문);
+                break; -> switch문 종료
+            case 값3:
+                실행문 (값이 값3일때의 실행문);
+                break; -> switch문 종료  
+            default: 
+                실행문; (값이 값1 ,2 ,3 이 아닐때 실행문);  
+        }
+        */
+
+        let number = 4;
+
+        switch (number) {
+            case 1:
+                console.log("1번 입니다.")
+                break;
+            case 2:
+                console.log("2번 입니다.")
+                break;
+            case 3:
+                console.log("3번 입니다.")
+                break;
+            default:
+                console.log("그 외의 숫자입니다.")
+        }
+
+        let A; //A에 100을 더하라 결과값이 다시 A에 입력
+        //A = A + 100; => A += 100
+        //먼저 계산해야하는것은 우항이고 우항의 결과 값을 좌항이 A에 입력한다.
+        //② = ①  --> ①먼저 결과 값을 ②으로 입력한다.
+        /* 
+            A += 100;
+            console.log(A) //200
+
+            let 입장료 = prompt("아동, 청소년, 성인중에 선택입력","");
+
+            switch(입장료){
+                case "아동":
+                    입장료 += ":입장료 2000원입니다."
+                    break;
+                case "청소년":
+                    입장료 += ":입장료 5000원입니다."
+                    break;
+                case "성인":
+                    입장료 += ":입장료 10000원입니다."
+                    break;
+                default:
+                    입장료 = "입력을 다시 확인하세요."
+            }
+
+            console.log(입장료)
+         */
+
+        let day = new Date().getDay();
+        //0-> 일요일 1-> 월요일 2-> 화요일 
+        //3-> 수요일 4-> 목요일 5-> 금요일 6-> 토요일
+
+        console.log(day)
+
+        switch (day) {
+            case 0:
+                document.write("일요일입니다.")
+                break;
+            case 1:
+                document.write("월요일입니다.")
+                break;
+            case 2:
+            document.write("화요일입니다.")
+                break;
+            case 3:
+            document.write("수요일입니다.")
+                break;
+            case 4:
+            document.write("목요일입니다.")
+                break;
+            case 5:
+            document.write("금요일입니다.")
+                break;
+            case 6:
+            document.write("토요일입니다.")
+                break;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

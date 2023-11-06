@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // # 반복문
+        //-> for, while, do..while, break, continue
+
+        //[1] for 문
+        //가장 대표적인 (많이 사용하는)반복문 ->연속된 동일한 반복 작업을 처리
+        //보통 명확아게 반복 횟수가 지정되어 있으면 for 반복문을 사용, 아니면 while, do..while반복을 사용
+
+        //1~10까지 출력하시오
+        /*  
+         document.write(1);
+         document.write(2);
+         document.write(3);
+         document.write(4);
+         document.write(5);
+         document.write(6);
+         document.write(7);
+         document.write(8);
+         document.write(9);
+         document.write(10); 
+        */
+
+        // for(let ①; ②; ④){
+        //      ③
+        //  }
+
+        for (let i = 1; i <= 10; i++) {
+            document.write(i);
+        }
+        document.write("<br/>------------------------------------- <br/>")
+
+        //1~20까지 중 짝수만 출력
+        for (let i = 1; i <= 10; i++) {
+            document.write(i * 2);
+        }
+
+        // for(let i = 0; i<=20; i++){
+
+        //     if(i%2 == 0){
+        //         document.write(i);
+        //         document.write("<br>")
+        //     }
+
+        // }
+        document.write("<br/>------------------------------------- <br/>")
+        for (let i = 1; i <= 4; i++) {
+            for (let j = 1; j <= 4; j++) {
+                document.write(i + "x" + j + "=" + i * j + ",");
+            }
+            document.write("<br>")
+        }
+
+        document.write("------------------------------------- <br/>")
+
+        for (let i = 2; i <= 9; i++) {
+            for (let j = 1; j <= 9; j++) {
+                document.write(i + "x" + j + "=" + i * j + ", ");
+            }
+            document.write("<br>")
+        }
+
+        document.write("------------------------------------- <br/>")
+
+        for (let i = 9; i >= 2; i--) {
+            for (let j = 9; j >= 1; j--) {
+                document.write(i + "x" + j + "=" + i * j + ", ");
+            }
+            document.write("<br>")
+        }
+
+        document.write("------------------------------------- <br/>")
+
+        //별찍기
+
+        let output = "";
+
+        for (let i = 0; i <= 5; i++) {
+            for (let j = 5; j > i; j--) {
+                output += "*";
+            }
+            document.write(output)
+            document.write("<br>")
+            output = ""
+        }
+
+        for (let i = 0; i <= 5; i++) {
+            for (let j = 5; j > i; j--) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+
+        document.write("------------------------------------- <br/>")
+
+
+
+        //[2] while
+        // while(조건문){
+        //     조건문이 참일때 실행되는 실행문
+        // }
+
+        //1~10까지 출력하기
+
+        let i = 1;
+        while (i <= 10) {
+            document.write(i + ",");
+            i++
+        }
+
+        document.write("<br>")
+
+        //10~1까지 출력하기
+        let j = 10;
+        while (j >= 1) {
+            document.write(j + ",")
+            j--
+        }
+
+        document.write("<br/>------------------------------------- <br/>")
+
+        let k = 2;
+        while (k < 10) {
+            let j = 1;
+            while (j < 10) {
+                document.write(`${k}x${j}=${k*j}, `);
+                j++;
+            }
+            k++;
+            document.write("<br>")
+
+        }
+
+        document.write("<br/>------------------------------------- <br/>")
+
+        //break, continue  둘다 반복문을 멈추는 역할을 한다.
+        //차이점
+        //break -> 만나는 순간 반복문을 멈추고 완전히 빠져나옴.
+        //continue -> 만나는 순간 반복문을 멈추고 다음 반복을 계속해서 이어나감. 
+
+
+        let l = 1;
+        while(l<=100){
+            document.write(`${l}번째 선수입장합니다.<br>`)
+            if(l>5){
+                break;  //while문 종료, (중지문)
+            }
+            l++;
+        }
+
+        document.write("<br/>------------------------------------- <br/>")
+
+
+        let c = 1;
+        while(c<=20){
+            c++;
+            if(c%2 == 0){
+                continue;  //continue를 만나면 continue 아래 코드는 실행되지 않는다.
+            }
+            document.write(`${c}번째 선수입장합니다.<br>`)
+
+        }
+
+        document.write("<br/>------------------------------------- <br/>")
+
+        //[3]do..while
+        //-> 처음 한번은 무조건 실행
+
+        // do{
+        //     처음 한번은 무조건 실행
+        // }while(조건문);
+
+        let a=1;
+        do{
+            document.write(a + "<br>")
+            a++;
+        }while(a<=5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

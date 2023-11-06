@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <section class="main">
+        <div class="cube">
+            <div class="box_area">
+                <div class="box box_front">
+                    <h2>1</h2>
+                </div>
+                <div class="box box_right">
+                    <h2>2</h2>
+                </div>
+                <div class="box box_back">
+                    <h2>3</h2>
+                </div>
+                <div class="box box_left">
+                    <h2>4</h2>
+                </div>
+                <div class="box box_top">
+                    <h2>5</h2>
+                </div>
+                <div class="box box_bottom">
+                    <h2>6</h2>
+                </div>
+            </div>
+        </div>
+        <!-- //cube -->
+        <div class="button">
+            <div class="rotate_x_button">
+                <button class="rotate_x_top" onclick="rotateXAxis(1)">위</button>
+                <button class="rotate_x_bottom" onclick="rotateXAxis(-1)">아래</button>
+            </div>
+
+            <div class="rotate_y_button">
+                <button class="rotate_y_left" onclick="rotateYAxis(-1)">좌</button>
+                <button class="rotate_y_right" onclick="rotateYAxis(1)">우</button>
+            </div>
+
+            <div class="front" onclick="front()">정면</div>
+        </div>
+    </section>
+
+
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

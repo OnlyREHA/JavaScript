@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var</title>
+
+    <script>
+        console.log("head")
+    </script>
+</head>
+
+<body>
+
+    <script>
+        console.log("body")
+
+        // # 자바스트립트 출력)
+        //[1] alert()
+        // alert('안녕하세요') -> 경고문을 띄움
+
+        //[2] document.write()
+        /* 
+        let result = prompt('당신의 점수는?' , ''); ->경고문
+        document.write('당신의 점수는' + result)    ->window 화면
+        */
+        //[3] consol.log()
+
+        //[4] innerHTML --> HTML DOm 요소를 이용하는 방법
+
+
+        //ROM)
+        //- 읽기 전용 메모리 (Read Only Memory) : 비휘발성 메모리 /영구저장
+
+        //RAM)
+        //- 랜덤 액세스 메모리 (Random Access Memory) : 휘발성 메모리 / 작업중인 파일을 한시적으로 저장
+
+
+
+        // # 자바스크립트 변수)
+        //var , let , const 
+
+        //[1] 변수란? -> 데이터를 저장하는 컴퓨터의 메모리 공간이다.
+        //Memory -> RAM 이라고 생각해도 무방
+
+        //변수) 변하는수  => variable(가변적인 , 변동이 심한)
+        //상수) 변하지 않는 수  => constant(끊임없는 , 변함없는)
+
+        //[2] 변수선언이란? 
+        //프램언어 -> JAVA,c,c#...  / 먼저 변수의 타입에 맞는 자료형을 선언해 주어야한다
+        // int green = 10;
+        // long blue = 10000L;
+        // float red=0.112f;
+        // double black=3.14;
+
+
+        // javaScript 에서는 변수타입을 선언하지 않는다  : 유연성 , 편리함
+
+        //변수를 사용하는 이유 -> 재사용(작업능률, 생산성)
+        /* 
+                console .log(3+6); //9
+
+                let v1=3;
+                let v2=6;
+
+                let result = v1 + v2;
+
+                console .log(result)
+         */
+
+
+
+        // # var , let , const 키워드들로 선언된 변수들의 특징및 차이점)
+
+        //[1] let
+        //변수를 만들때 변수명 앞에 적는 키워드 중 하나
+        //스코프(scope) :범위(프로그램에서의 범위를 의미)
+
+        //[2] var
+        //함수 내에서 선언된 변수는 함수 내에서만 유효하다 -> 함수 밖에서는 참조(사용)할수 없다.
+        //함수 내에서 선언된 변수 -> 지역 변수
+        //함수 외부에서 선언된 변수 -> 전역변수
+        //var => 함수, 레벨 스코프
+
+        //[3] let , const => 블록 레벨 스코프 -> {}
+        //함수 --> function(){}, if(){} , for(){} , while(){} 문 등에서 선언된 변수는 블록내에서만 유효하다 /블록 밖에서 참조 할수없음
+        //코드 블록 내에서 선언된 변수 --> 지역변수
+
+
+        //호이스팅이 되는 것 :var변수 , 이름이 있는 함수 --- function 이름(){}
+        //=> 호이스팅이란 -> 메모리상에서 어디서든 참조 할수있게 위쪽으로 올리는 것
+
+        /*  console.log(name); //실행하면 홍길동  //호이스팅이 되었기 때문
+        if (true) { //if구문 if문의 영역(스코프)
+            var name = "홍길동";
+        }
+        console.log(name);//name 전역변수
+
+        // let 키워드를 사용하여 변수를 만들면 의도치 않게 전역변수가 되어지는것을 막을수있다.
+        if (true) {
+            let name1 = "길동이";
+            //console.log(name1); //{} 안에서만 참조가능
+        }
+        console.log(name1); //undefind
+        */
+
+        //[4] 변수선언 및 값 세팅 (할당)
+        /* 
+        let user; //user라는 이름을 가진 변수를 생성한다 -> 선언 -> user안에 값이 셋팅한것은 아님
+        console.log(user) //undefind
+
+        user= "강감찬";
+        console.log(user)
+        */
+
+        let phoneNumber = "0109833xxxx"; //선언과 값 셋팅(할당) 동시가능
+        console.log(phoneNumber)
+
+
+        /* let namename="이순신";
+           let age=44;
+           let email="test@naver.com"
+        */
+        
+        let namename="이순신",
+            age=44,
+            email="test@naver.com";
+
+
+        //[5] const --> 불변 : 할당된 값을 변경되지않게 변수를 만들고자 한다면 const사용
+        //상수는 재할당 할수 없음 --> 변경한다면 에러발생
+        
+        // const name4="짱구"; => Error
+
+        name4="흰둥이";
+        console.log(name4)
+
+        /* 
+        -> 생성과 동시에 할당해야함 
+           const name5;
+           name5="짱구" 
+        */
+
+        const name5="짱구";
+
+        //상수 사용방법
+        //다른 개발자들에게 상수라는 것을 알리는 용도로 const 키워드를 사용하여 변수생성
+        //관습적으로 대문자로 표시를 많이 함
+        //ex)
+        const PI=3.14;
+        const FIRST_STAGE_BACKGROUND="#ccc";
+        const LECTURE_RUNNING_TIME=30;
+
+
+
+    </script>
+
+
+
+    <script src="./main.js"></script>
+    <!-- => head ,  body 로 외부 script 연결가능 -->
+</body>
+
+</body>
+
+</html>
