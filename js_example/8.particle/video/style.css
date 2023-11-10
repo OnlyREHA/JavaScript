@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.particle{
+    position: relative;
+    height: 100vh;
+    background-color: black;
+}
+
+.particle video{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.particle #particles-js{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    mix-blend-mode: screen;
+}

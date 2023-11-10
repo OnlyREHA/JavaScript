@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+
+<body>
+
+    <script>
+        //# 배열(Array)
+        //[1] 배열이란
+        //변수 --> 하나만 담을수 있다
+        //배열 --> 여러개 담을수 있다
+
+
+        //[2] 일반적으로 배열은 동일한 자료형을 데이터에 연속으로 담지만,
+        //자바스크립트는 자료형에 상관없이 담을수 있다.
+
+        //즉, 연속된(또는 순거가 있는) 형태로 담을수 있는데 처음부터 끝까지 번호사 부여된다.
+
+        //[3] 배열의 사용방법
+        //ex) 한 반에 학생이 30명이 있는데 그 학생들을 변수에 담는다면
+
+        /*  
+         let student1= "짱구"
+         let student2= "짱아"
+         let student3= "흰둥이"
+         let student3= "맹구"
+         let student3= "철수"
+         ... 
+         */
+
+        let students = ["짱구", "짱아", "흰둥이", "맹구", "철수"];
+
+        //[4]인덱스(index)
+        //배열릉 만들고 값을 할당하면 처음부터 끝까지 연속된 고유번호를 갖게 되는데 이것을 index(인덱스)라고 한다.
+
+        //index는 0부터 시작 --> 짱구 0번 ~ 철수 4번
+        //index를 통해서 값을 출력할수있다.
+
+        //console.log(배열이름[index번호])
+        console.log(students[0]) //짱구
+        console.log(students[1]) //짱아
+        console.log(students[4]) //철수
+
+        //[5] 수정하기
+        students[0] = "수지";
+        console.log(students[0]) //수지 (짱구에서 변경)
+
+        //# 배열(Array) -- 추가 , 삭제(배열의 끝에서 이루어짐)
+        //--> push, pop
+
+        //[1] 자바스크립트 배열은 다양한 자료형을 담을 수 있다.
+        //--> 문자형, 숫자형, 블리언형, 객체, 함수 등등
+
+        let arr = ["홍길동", 100, 3.14, false, 
+        {id: 'test', age: 20},  //객체
+            function (a) {  //함수
+                return a * 2
+            }
+        ];
+
+        console.log(arr)
+
+        //[2] 배열에 들어있는 함수는 어떻게 호출할까?
+        console.log(arr[5](100)) //200
+
+        //[3] 배열은 하나씩 세지 않고 배열의 길이를 구한다.
+        //length ==> 해당 배열이 가지고 있는 원소(요소)의 갯수를 반환
+
+        console.log(arr.length) //6
+
+        //[4]push
+        //--> 배열 맨 끝에 원소(요소)를 추가
+        arr.push("안뇽하세요")
+        console.log(arr)
+
+        //[5] pop
+        //--> 배열 맨끝에 원소(요소)를 제거
+        arr.pop();
+        console.log(arr)
+
+
+        //[6] 여러개 추가
+        arr.push("초코비","액션가면")
+        console.log(arr)
+
+        //# 배열(Array)
+
+        /* 
+        let arr = ["홍길동", 100, 3.14, false, 
+        {id: 'test', age: 20},  //객체
+            function (a) {  //함수
+                return a * 2
+            }
+        ];
+        */
+
+        //[1] shift
+        // -> 배열 맨 앞에 원소(요소)를 제거
+        arr.shift();
+        console.log(arr)
+
+        //[2] unshift
+        // -> 배열 맨 앞에 원소(요소)를 추가
+        arr.unshift("잠이오네요");
+        console.log(arr)
+
+        //[3] 여러개 추가
+        arr.unshift("순자","말자","경자")
+        console.log(arr)
+
+
+
+        //# 
+
+        document.write("-------------------------- for문 배열 --------------------------<br>")
+
+
+        //[1] for문 배열
+
+        let arr1=["첫번째", "두번째","세번째","네번째","다섯번째"];
+
+        for(let i=0; i<arr1.length; i++){
+            document.write(arr1[i] + "<br>")
+        }
+
+
+        document.write("-------------------------- forEach 배열 --------------------------<br>")
+
+
+
+        //[2] forEach 배열
+
+        //배열이름.forEach(function(변수를 사용해서 각각의 요소를 순서대로 받음){
+        //      각각의 실행문});
+
+        arr1.forEach(function(item){
+            document.write(item + "<br>")
+        });
+
+        document.write("-------------------------- for..in 배열 --------------------------<br>")
+
+
+        //[3] for..in 배열
+        // for(let 변수를 사용해서 각각의 요소를 순서대로 받음 in 배열이름){
+        //     각각의 실행문
+        // }
+
+        for(let item in arr1){
+            document.write(item + "<br>")
+            document.write(arr1[item])
+
+        }
+
+        document.write("<br>-------------------------- for..of 배열 --------------------------<br>")
+
+        //[4]for..of배열
+        // for(let 변수를 사용해서 각각의 요소를 순서대로 받음 of 배열이름){
+        //     각각의 실행문
+        // }
+
+        
+        for(let item of arr1){
+            document.write(item + "<br>")
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

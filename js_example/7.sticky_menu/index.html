@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky_menu</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+
+    <header>
+        <h2>Scroll Down</h2>
+        <p>Scroll down to see the sticky effect.</p>
+    </header>
+
+    <nav id="navbar">
+        <a href="javascript:void(0)" class="active">Home</a>
+        <a href="javascript:void(0)">News</a>
+        <a href="javascript:void(0)">contact</a>
+    </nav>
+
+    <div class="content">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime veritatis inventore quo explicabo voluptas libero!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt unde dolore blanditiis illo? Consequuntur nulla sed rem in voluptates. Ducimus minus ipsum ea dolores soluta distinctio, fugit ullam reprehenderit dolor qui aliquam eius cupiditate, facere praesentium provident accusamus, nam tempore hic tempora aperiam necessitatibus dolore. Provident pariatur suscipit eaque corrupti.</p>
+    </div>
+
+
+    <script>
+
+        //scroll이 발생하면 실행하는 function안에 myFunction();
+        //같이 함수를 호출하는 내용 뿐이면 아래와 같이 단축할수있다.
+
+        // window.addEventListener('scroll', function(){
+        //     myFunction();
+        // })
+
+        //window.addEventListener('scroll', myFunction)
+
+        window.onscroll= myFunction;
+
+        let navbar = document.getElementById('navbar')
+        //offset은 document를 기준으로 하는 좌표를 구한다.
+        //position은 부모를 기준으로 좌표를 구한다.
+        let sticky = navbar.offsetTop;
+         console.log(sticky)
+
+
+        function myFunction(){
+            //console.log(window.scrollY)
+            console.log(window.pageYOffset)
+            if(window.pageYOffset>=sticky){
+                navbar.classList.add('sticky');
+            }else{
+                navbar.classList.remove('sticky');
+            }
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
