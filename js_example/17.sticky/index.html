@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky</title>
+    <style>
+        .main{
+            height: 300vh;
+            background-color: beige;
+        }
+
+        .sticky{
+            position: sticky;
+            /* 부모들중에 누구도 overflow:hidden;이 있으면 안된다 */
+            width: 200px;
+            top: 0;
+        }
+
+        .sticky img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="top" style="height: 100vh; background-color: #ccc;"></section>
+    <section class="main">
+        <div class="sticky">
+            <img src="https://mblogthumb-phinf.pstatic.net/20151117_163/ysb0509270_14477716632021fC1W_PNG/ldd4_%286%29.png?type=w420" alt="img">
+        </div>
+    </section>
+    <section class="bottom" style="height: 100vh; background-color: #ccc;"></section>
+    
+</body>
+</html>

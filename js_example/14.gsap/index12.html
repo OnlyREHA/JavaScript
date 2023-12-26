@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* scrollTrigger nav 영역에 적용하기 */
+
+        *{margin: 0; padding: 0;}
+
+        nav{
+            position: sticky;
+            top: 0; 
+            transition: 0.6s;
+            background-color: tan;
+            color: #fff;
+        }  
+
+        nav.nav-active{
+            background-color: #fff;
+            color: #000;
+        }
+
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            padding: 40px;
+        }
+
+        li{
+            margin-left: 60px;
+        }
+
+        .panel{
+            height: 100vh;
+            padding-bottom: 100vh;
+        }
+
+        .panel p{
+            padding-top: 50px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, optio. Neque, necessitatibus! Reiciendis quae cupiditate ipsum alias deserunt minima accusantium quisquam eaque illum amet! Magnam perspiciatis quos quisquam veritatis, iusto atque qui eaque eveniet, minus porro similique recusandae libero facere et possimus quia reiciendis excepturi voluptas adipisci modi explicabo. Numquam minus nisi magnam, neque facilis veniam atque perspiciatis pariatur adipisci at odio aliquid autem? Molestias ratione alias, ipsam molestiae vel officiis maiores voluptatem tempora ab, fugiat ipsum nam iure placeat culpa animi. Optio beatae maiores ab facilis amet debitis sequi sunt eum aperiam, magni harum culpa in commodi porro repudiandae, dolor atque nihil voluptatem et obcaecati iste quasi sint! Fugiat et tenetur suscipit voluptates quia soluta quidem pariatur eius eos! Quaerat dolor voluptates ut dolores earum, expedita et. Aspernatur a reiciendis quas obcaecati iusto id molestias fugit magni, laudantium vero. Veniam, sunt dolore vero eligendi magni quo? Molestias quasi magnam vitae? Doloremque officia quis maxime neque temporibus! Animi dolor quia aspernatur quaerat maiores? Odit accusantium autem provident cupiditate non fuga et expedita ducimus amet explicabo quas debitis rerum labore id libero eaque, quod blanditiis quaerat tempora repellendus repudiandae aperiam nisi qui commodi! Officiis maiores ab cumque iure? Commodi, mollitia iusto.</p>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <script>
+        // gsap.registerPlugin(ScrollTrigger)
+        // gsap.to("nav",{
+        //     scrollTrigger:{
+        //         trigger:".panel",
+        //         start:"top 6%",
+        //         markers:true,
+        //         toggleClass:"nav-active"  //panel에 클래스명 추가
+        //         toggleClass:{targets:"nav", className:"nav-active"},  //nav에 클래스명 추가
+        //     }
+        // })
+
+        ScrollTrigger.create({
+            trigger:".panel",
+            start:"top 6%",
+            markers:true,
+            toggleClass:{targets:"nav", className:"nav-active"},
+        })
+
+        //두가지 방식 
+
+
+    </script>
+    
+</body>
+</html>

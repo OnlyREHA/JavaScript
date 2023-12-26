@@ -1,0 +1,388 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nanum+Gothic&display=swap');
+
+/* 
+font-family: 'Lora', serif;
+font-family: 'Nanum Gothic', sans-serif;
+*/
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    height: 500vh;
+    background-color: rgb(173, 209, 233);
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1rem;
+}
+
+h2{
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+
+}
+
+.world{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0; top: 0;
+    perspective: 1000px;
+}
+
+.world .stage{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.world .stage .house{
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: translateZ(-970vw);
+}
+
+.house .wall{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform-style: preserve-3d;
+}
+
+.house .wall-left{
+    width: 2000vw;
+    background-color: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-1000vw);
+}
+
+.house .wall-right{
+    width: 2000vw;
+    background-color: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-900vw);
+}
+
+.house .wall-front01{
+    transform: translateZ(850vw);
+}
+.house .wall-front02{
+    transform: translateZ(500vw);
+}
+.house .wall-front03{
+    transform: translateZ(200vw);
+}
+.house .wall-front04{
+    transform: translateZ(-100vw);
+}
+.house .wall-front05{
+    transform: translateZ(-400vw);
+}
+.house .wall-front06{
+    transform: translateZ(-700vw);
+}
+.house .wall-front07{
+    transform: translateZ(-1000vw);
+}
+
+
+/* wall-front01 */
+.wall-front .wall-content{
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.wall-front01.wall-front01.wall-front01{
+    background:url(https://cdn.womaneconomy.co.kr/news/photo/202306/217238_424299_436.jpg) no-repeat center; 
+    background-size: cover;
+}
+
+.wall-front01 .wall-content{
+    background-color: #000000a8;
+    padding-top: 30vh;
+}
+
+.wall-front01 .wall-content h2{
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 20vh;
+    font-size: 8rem;
+    color: #f0f0f0;
+    letter-spacing: 50px;
+}
+
+.wall-front01 .wall-content p{
+    text-align: center;
+    line-height: 5vh;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 50px;
+}
+/* wall-front02 */
+
+/* text */
+.wall-content .title{
+    width: 50%;
+    line-height: 2rem;
+    padding: 100px;
+}
+.wall-content .title h2{
+    margin-bottom: 20px;
+}
+
+.wall-front02 .wall-content>img{
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+} 
+
+.wall-front02 .wall-content .desc-left{
+    position: relative;
+    width: 80vw;
+    transform: translateZ(220vw) translate(0vw,-30vh);
+}
+
+.wall-front02 .wall-content .desc-left p,
+.wall-front02 .wall-content .desc-right p{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 46%; top: 50%;
+    z-index: 99;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #eee;
+    padding: 0.5rem 1.5rem;
+}
+
+.wall-front02 .wall-content .desc-left img{
+    width: 45%;
+    margin-right: 1rem;
+}
+
+.wall-front02 .wall-content .desc-right{
+    position: relative;
+    width: 100vw;
+    transform: translateZ(100vw) translate(5vw,-60vh);
+}
+
+.wall-front02 .wall-content .desc-right img{
+    width: 45%;
+    margin-right: 2rem;
+    transform: rotateY(0deg) translateZ(0vw);
+}
+
+
+/* wall-front03 */
+
+.wall-front03 .wall-content{
+    padding: 100px 50px;
+}
+
+.wall-front03 .wall-content .title{
+    float: left;
+}
+
+.wall-front03 .wall-content>img{
+    width: 50%;
+    height: 100%;
+    float: right;
+    object-fit: cover;
+} 
+
+/* swiper영역 */
+.swiper {
+    width: 70%;
+    height: 90%;
+    margin-top: 50px;
+    transform: translateZ(120vw) translate(0vw, -70vh);
+}
+
+.swiper-slide.swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide p{
+    display: block;
+    width: 100%;
+    height: 10%;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.wall-content .tree-left{
+    width: 80vw;
+    display: flex;
+    transform: rotateY(58deg) translateZ(51vw) translate(-139vw, -121vh);
+    justify-content: center;
+}
+
+.wall-content .tree-left img{
+    width: 40%;
+    margin-right: -120px;
+} 
+
+.wall-content .tree-right{
+    width: 80vw;
+    display: flex;
+    transform:  rotateY(-58deg) translateZ(40vw) translate(140vw, -173vh);
+    justify-content: center;
+}
+
+.wall-content .tree-right img{
+    width: 40%;
+    margin-right: -120px;
+} 
+
+/* wall-front04 */
+
+.wall-front04 .wall-content .title{
+    margin-left: 50vw;
+}
+
+.wall-front04 .wall-content .title>img{
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#Osaka-box{
+    width: 100%;
+    display: flex;
+    transform: translateZ(150vw) translate(0, -50vh);
+    justify-content: space-between;
+}
+
+#Osaka-box img {
+    width: 20%;
+    
+}
+
+/* wall-front05 */
+.wall-front05 .title{
+    width: 100%;
+    text-align: center;
+}
+
+.wall-front05 .title p{
+    text-align: left;
+}
+
+.wall-front05 .Okinawa{
+    position: absolute;
+    width: 48%;
+    height: 50%;
+}
+
+.wall-front05 .Okinawa img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wall-front05 .Okinawa.left{
+    transform: translateZ(195vw) translate(0, -101vh);
+    transform-style: preserve-3d;
+
+}
+
+.wall-front05 .Okinawa.left img:first-child{
+    transform: translateZ(-100vw) translate(0, 50vh);
+
+}
+
+.wall-front05 .Okinawa.right{
+    transform: translateZ(195vw) translate(50vw, -101vh);
+    transform-style: preserve-3d;
+
+}
+
+.wall-front05 .Okinawa.right img:first-child{
+    transform: translateZ(-100vw) translate(0, 50vh);
+
+}
+
+/* wall-front06 */
+
+.wall-front06 .title{
+    width: 100%;
+    display: flex;
+}
+
+.wall-front06 .title img{
+    width: 50%;
+    object-fit: cover;
+}
+
+.wall-front06 .title .txt{
+    padding: 50px;
+}
+
+.Sapporo{
+    display: flex;
+    width: 100%;
+    transform: translateZ(150vw) translate(0, -50vh);
+    justify-content: space-between;
+}
+
+.Sapporo img{
+    display: block;
+    width: 20%;
+    height: 50%;
+}
+
+
+  
+/* wall-front07 */
+.wall-front07 .wall-content{
+    position: relative;
+}
+
+.wall-front07 .wall-content>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.wall-front07 .title{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wall-front07 .title img{
+    width: 200px;
+}
+
+.wall-front07 .wall-content .last.right img:first-child{
+    width: 20%;
+}
+
+
+.wall-front07 .wall-content .last.left{
+    transform: translateZ(100vw) translate(1000px, 0vh);
+}
+
+.wall-front07 .wall-content .last.right{
+    transform: translateZ(5vw) translate(0, 0vh);
+}

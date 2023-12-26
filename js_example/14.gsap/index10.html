@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body>div {
+            height: 100vh;
+        }
+
+        .div1 {
+            background-color: rgb(255, 220, 220);
+        }
+
+        .div2 {
+            padding-top: 200px;
+            background-color: aliceblue;
+        }
+
+        .div2>div {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 100px;
+        }
+
+        .div2>div.square1 {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .div2>div.square2 {
+            background-color: rgb(253, 183, 155);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="square1"></div>
+        <div class="square2"></div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+
+        gsap.to(".square1", {
+            x: 700,
+            duration: 3,
+            scrollTrigger: {
+                trigger: ".div2",
+                start: "top 0%", 
+                //end:() => `+= ${document.querySelector('.square').offHeight}`,
+                //.square의 높이가 100px이라면 애니메이션의 현재 위치(start)에서   
+                end:"+= 200vh",
+                scrub: 1,
+                markers:{
+                    startColor:"purple",
+                    endColor:"black"
+                },
+                pin:'.div2',
+                
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{margin: 0; padding: 0;}
+
+        body>div{
+            height: 100vh;
+        }
+
+        .div1{
+            background-color: rgb(255, 220, 220);
+        }
+
+        .div2{
+            padding-top: 200px;
+            background-color: aliceblue;
+        }
+
+        .div2>div{
+            width: 150px;
+            height: 150px;
+            margin-bottom: 100px;
+        }
+
+        .div2>div.square1{
+            background-color: lightgoldenrodyellow;
+        }
+
+        .div2>div.square2{
+            background-color: rgb(253, 183, 155);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="square1"></div>
+        <div class="square2"></div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+
+        gsap.to(".square1",{
+            x:700,
+            duration:3,
+            scrollTrigger:{
+                trigger:".square1",
+                start:"top 30%",  //trigger의 주체의 top지점이 viewport의 top에서 30%지점에서 시작
+                end:"center 10%",  //trigger의 주체의 center지점이 viewport의 center에서 20%지점에서 종료
+                scrub:true,  //start에서 end까지 애니메이션이 scroll에 반응하여 애니메이션이 실행됨
+                toggleClass:"action",  //start에서 end사이 일때는 action클래스가 square에 추가되고
+                //그외 영역에서는 action 클래스가 삭제
+                markers:{
+                    startColor:"red",
+                    endColor:"blue",
+                    fontSize:"30px"
+                },
+                //markers: 1,  //start, end등 애니메이션의 위치를 화면에 표시 --> true ,1
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

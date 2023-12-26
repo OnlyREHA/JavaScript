@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap</title>
+    <style>
+
+        .wrap>div{
+            width: 100px;
+            height: 100px;
+            margin-top: 200px;
+        }
+
+        .wrap img{
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="one">
+            <img src="https://square.chiz.me/files/attach/images/2023/09/25/5940e79355143610ae88a707d41e6316.webp" alt="이미지">
+        </div>
+        <div class="two">
+            <img src="https://mblogthumb-phinf.pstatic.net/20160421_298/kagasiya_1461198547908hNVqS_PNG/005mymelody_a.png?type=w800" alt="이미지">
+        </div>
+        <div class="three">
+            <img src="https://www.sanrio.co.jp/special/characterranking/2023/assets/images/characters/cinnamon/img_chara3.png" alt="이미지">
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+        //gsap.to(누가,{실행})
+        gsap.to('.one',{x:700,scale:3,duration:3})  //실행문대로 된다
+        gsap.from('.two',{x:700,scale:3,duration:3})  //시작은 실행문 도착은 원래위치
+        // gsap.fromTo('.three',{from상태},{to상태}) 
+        gsap.fromTo('.three',{x:1000,y:400,opacity:0,scale:1,duration:1},{x:400,y:0,opacity:1,scale:3,duration:1}) 
+    </script>
+</body>
+</html>

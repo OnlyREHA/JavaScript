@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .imgs{
+            width: 1000px;
+            height: 1886px;
+            position: relative;
+        }
+
+        .imgs img{
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+        }
+
+        .btn_wrap{
+            position: absolute;
+            left: 5vw;
+            top: 5vh;
+            display: flex;
+            z-index: 333;
+        }
+
+        .btn_wrap>a{
+            padding: 5px 10px;
+            background-color: #222;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="btn_wrap">
+        <a href="#" class="play">play</a>
+        <a href="#" class="pause">pause</a>
+        <a href="#" class="reverse">reverse</a>
+        <a href="#" class="restart">restart</a>
+        <a href="#" class="test">test</a>
+    </div>
+    <div class="imgs">
+        <img class="파랑손" src="images/Untitled-1.png" alt="img01">
+        <img class="반짝이 장식" src="images/Untitled-2.png" alt="img02">
+        <img class="원 장식" src="images/Untitled-3.png" alt="img03">
+        <img class="초록손" src="images/Untitled-4.png" alt="img04">
+        <img class="똥색원" src="images/Untitled-5.png" alt="img05">
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+
+        //let tl = gsap.timeline({timeline에 관련된 모든 트윈에 설정값을 적어둘수 있다})
+
+        let tl = gsap.timeline({paused:true});
+        tl.from('.똥색원',{duration:1.5, opacity:0, x:50, y:50})
+          .from('.초록손',{duration:1.5, opacity:0, x:0, y:100}, '-=0.7')
+          .add('test')
+          .from('.장식',{duration:1, opacity:0, x:100, y:-100, stagger:0.5})
+          .from('.파랑손',{duration:1, opacity:0, x:-100, y:50}, '<')
+
+
+        document.addEventListener('click',function(ev){
+            let check = ev.target.classList;
+            // console.log(check)
+
+            //hasClass(클래스명) = 클래스명의 클래스를 가지고 있나?
+            if(check.contains('play')){tl.play()}
+            if(check.contains('pause')){tl.pause()}  //멈춤
+            if(check.contains('reverse')){tl.reverse()}  //반대로
+            if(check.contains('restart')){tl.restart()}  //다시 실행
+            //if(check.contains('test')){tl.kill()  //실행안됨
+            if(check.contains('test')){tl.play('test')}  //.add 이후부터 실행
+        })
+
+    </script>
+    
+</body>
+</html>
