@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열_(중)</title>
+</head>
+<body>
+
+    <script>
+        //# 배열의 메서드(Mathod)
+        //[1] 객체
+        //배열 
+        //--> 일반적으로 같은 타입의 데이터를 묶어서 사용
+        //--> 동적타입언어에서는 타입에 상관없이 사용함
+        //객체는 특성(특징)들을 묶어서 줄수 있고(속성), 해당 객체의 동적(메서드)도 정의해서 묶어줄수 있다.
+
+        const ar=[];
+        ar.push('국어');
+        ar.push('영어');
+        ar.push('수학');
+
+        console.log(ar)  // 0:국어 1:영억 2:수학
+
+        const arr=[1,2,3,4,5,6]
+
+        console.log(arr)  //1,2,3,4,5,6
+
+        //처음 값과 긑 값
+        const animals=[ 'tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo' ];
+
+        console.log(animals[0])  //처음값 tiger
+        console.log(animals[4])  //cat
+        console.log(animals[animals.length - 1])  //끝값 hippo
+
+        //console.clear();
+        // -> console 화면정리
+
+
+       //undefined 값을 가지는 경우
+
+        let green;
+        console.log(green)
+
+        console.log(animals[5]);  //sheep
+        console.log(animals[10]);  //undefined
+
+
+        //[2]배열의 반복과 출력
+        // 1) 전통적인 for 반복문
+        for(let i=0; i<animals.length; i++){ //i++ = i=i+1 = i+=1
+                console.log(animals[i])  //tiger alligator elephant dog cat sheep hippo
+        }
+
+        // 2) for..in, for..of 반복문
+        //for(let 변수(배열안에 있는 아이템이 순서대로 변수로 호출됨) of 배열명 )
+        for(let item of animals){
+            console.log(item)
+        }
+
+        for(let item in animals){
+            console.log(item)  //0 1 2 3 4 5 6
+            console.log(animals[item])  //tiger alligator elephant dog cat sheep hippo
+        }
+
+        // 3) 배열명 .for.forEach(function(){});
+        // 첫번째 매개변수 (item) --> 아이템이 각각 호출됨
+        // 두번째 매개변수 (ind) --> 아이템 각각의 index가 호출됨
+        // 세번째 매개변수 (oriarr) --> 원래 배열이 호출됨
+        animals.forEach(function(item, ind, oriarr){
+            console.log(item)  //tiger alligator elephant dog cat sheep hippo
+            console.log(ind)  //0 1 2 3 4 5 6
+            console.log(oriarr)
+
+        })
+
+        animals.forEach(function(element){
+            console.log(element)  //tiger alligator elephant dog cat sheep hippo
+        })
+
+        //Arrow function(=>) 화살표 함수표현
+        animals.forEach((element) => console.log(element))  //tiger alligator elephant dog cat sheep hippo
+        // animals.forEach(element => console.log(element)) -> 매개변수가 하나일때만 ()를생략할수있다.
+
+        // 4) spread Operator() => 펼침 연산자 ...
+
+        console.log(...animals) //tiger alligator elephant dog cat sheep hippo -> console 한줄에 펼침
+
+        //[3] 삽입과 삭제
+        //push(), pop()  --> 뒤에서 삭입하고 삭제
+        //unshift(), shift()  --> 앞에서 삽입하고 삭제 
+
+        let testAr=[1,2,3,4,5,6];
+        testAr.push(7)
+        testAr.pop()  //가장 마지막 아이템이 빠져나감
+        console.log(testAr)
+
+        testAr.unshift('a')
+        console.log(testAr)  //'a',1,2,3,4,5,6
+
+        testAr.shift()
+        console.log(testAr)  //1,2,3,4,5,6
+        testAr.shift()
+        console.log(testAr)  //2,3,4,5,6
+
+        //[4] split()메서드
+        //기능 --> 문자열을 배열로 리턴, 문자열에서 특정한 구분자를 기준으러 잘라내서 새로운 배열로 리턴
+        //사용 --> 문자열,split(구분자,limit)
+
+        let someSt="가랑잎이 솔잎더러 바스락거린다고 한다.";
+        // let splitted=someSt.split(" ");
+        // console.log(splitted)  //['가랑잎이', '솔잎더러', '바스락거린다고', '한다.']
+        let splitted=someSt.split(" ",2);
+        console.log(splitted)  //['가랑잎이', '솔잎더러']
+
+        let someSt2="진도 제주도 거제도 독도 가덕도";
+        let splitted2 = someSt2.split(', ');
+        console.log(splitted2)  //['진도 제주도 거제도 독도 가덕도']
+
+        //[4] slice()메서드 --> 비교하여 splice()메서드
+        //slice, splice -> 둘은 비슷하나 차이점이 있다.
+        //slice() 메서드는 원본배열을 수정하지 않음 /즉, 새로운 배열을 리턴
+        //splice()  --> 원본 배열을 수정함
+
+        //1)사용법
+        //slice(start)
+        //slice(start[,end])  end는 지정한 end 전까지를 잘라냄
+
+        let sliceArr=[ 'tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo' ];
+
+        //배열명.slice(1)  //인덱스 1포함해서 그뒤로는 모두 잘라내서 출력
+
+        let sliceAr1 = sliceArr.slice(1);
+        console.log(sliceAr1)  //['alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo']
+        console.log(sliceArr)  //['tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo']
+
+        let sliceAr2 = sliceArr.slice(1,4);  //인덱스1 뒤로 인덱스4까지 -> 인덱스 2,3,4
+        console.log(sliceAr2)  //['alligator', 'elephant', 'dog']
+
+        //[5] splice() 메서드
+        //배열을 기존 요소를 삭제하거나 교체하고자 할때 사용한다. 
+        //새로운 요소를 추가하거나 삭제할수 있음
+        //배열의 값을 변경
+        //원본을 수정, 잘라내고(삭제) 이어 붙이기 가능
+
+        //1)사용법
+        //splice(start,count(몇개를 잘라내것인가))
+        //splice(start,count,값1,값2)  -> 값1,2 = 잘라낸 자리에 대체할 아이템
+
+        const oriArr=[1,2,3,4,5,6,7,8,9,10];
+
+        // const spliceArr=oriArr.splice(5);
+        // console.log(spliceArr)  //[6, 7, 8, 9, 10]
+        // console.log("원본배열 : " + oriArr)  //원본배열 : 1,2,3,4,5
+
+        // const spliceArr2 = oriArr.splice(4,3);  //시작 인덱스4번째부터 3개 잘라내기 
+        // console.log(spliceArr2)  //[5, 6, 7]
+
+        const spliceArr3 = oriArr.splice(3,2,'a','b','c');
+        console.log(spliceArr3)  //[4, 5]
+        console.log(oriArr)  //[1, 2, 3, 'a', 'b', 'c', 6, 7, 8, 9, 10]
+
+        //2) 마이너스
+        const oriStrings = ['짱구','짱아','훈이','철수','맹구'];
+
+        // const oristring2 = oriStrings.splice(-2);  //뒤에서 2개
+        // console.log(oristring2)  // ['철수', '맹구']
+
+        //3) 새로운 요소 삽입 0
+        //삭제한 요소 없음
+        const oristring3 = oriStrings.splice(3,0,'흰둥이');
+        console.log(oristring3)  //[]
+        console.log(oriStrings)  //['짱구', '짱아', '훈이', '흰둥이', '철수', '맹구']
+
+        //[6] 배열 붙이기 concat()메서드
+
+        const myArr1 = [1,2,3,4];
+        const myArr2 = [5,6,7,8];
+
+        const myArr12=myArr1.concat(myArr2);
+        console.log(myArr1)  //[1, 2, 3, 4]
+        console.log(myArr2)  //[5, 6, 7, 8]
+        console.log(myArr12)  //[1, 2, 3, 4, 5, 6, 7, 8]
+
+        const myArr21=myArr2.concat(myArr1);
+        console.log(myArr21)  // [5, 6, 7, 8, 1, 2, 3, 4]
+
+
+        //문자열
+        const str1="Hello";
+        const str2="javascript";
+        console.log(str1.concat(str2))  //Hellojavascript
+        console.log(str1.concat(' ',str2))  //Hello javascript
+
+
+        const someList = ['안녕',' ','난',' ','뽀로로야',' ','!!'];
+        console.log(...someList)  //안녕   난   뽀로로야   !!
+        console.log(''.concat(...someList))  //안녕 난 뽀로로야 !!
+        //전개연산자 (spread operator)  --> 배열의 각 요소를 개별적인 인수로 전달한다.
+
+        // [7] index 몇 번째에 있는 찾기 --> indexOf()메서드
+
+        const greatMan=['짱구','짱아','훈이','철수','맹구'];
+
+        console.log(greatMan.indexOf('훈이'))  //2
+        console.log(greatMan.indexOf('맹구'))  //4
+        console.log(greatMan.indexOf('흰둥이'))  //-1 -> 없는 값을 indexOf()메서드로 찾으면 -1이 리턴
+
+        let abcAr1="ABC DEFGHIJKLMN";
+
+        console.log(abcAr1.indexOf('H'))  //8 -> 띄어쓰기 인식
+        console.log(abcAr1.indexOf('h'))  //-1 -> 대소문자 구분
+
+        console.log(abcAr1.lastIndexOf('H'))  //8 -> 역순으로 검사(인덱스 번호는 바뀌지 않음)
+
+        let abcAr2="abcdABCD";
+
+        console.log(abcAr2.lastIndexOf('A'))  //4
+        // .toUpperCase()  --> 대문자로 변환
+        console.log(abcAr2.toUpperCase().indexOf('A'))  //0
+        console.log(abcAr2.toUpperCase().lastIndexOf('A'))  //4
+
+        //indexOf옵션  -->indexOf('찾을 특정 값','시작할 위치')
+
+        const nums = ['k','o','r','e','a','u','s','a'];
+
+        console.log(nums.indexOf('a'))  //4
+        console.log(nums.indexOf('a',5))  //7
+
+        // [8] 반목문
+
+        const nums2 = "abcdaasdfasdsasdfaabdasfjasdfja";
+        const serchNumber = "asdf";
+
+        let startPosition = 0;
+        let lastResult = [];
+
+        while(true){
+            let idxRst = nums2.indexOf(serchNumber,startPosition);
+
+            if(idxRst == -1){
+                break;
+            }
+            lastResult.push(idxRst);
+            startPosition = idxRst+1;
+        }
+        console.log("찾고자하는 인덱스" + lastResult)
+        console.log("출현 빈도 수" + lastResult.length)
+
+        //배열에 특정 요소가 포함되어 있는지 없는지 알기 -->includes()
+        const testArr = ['korea','usa','china','japen','canada'];
+
+        console.log(testArr.includes('japen'))  //true
+        console.log(testArr.includes('mexico'))  //false
+
+        //배열내에 요소들을 하나로 묶어주기  --> 문자열(string)타입으로 묶어주기 --> join()
+        const testArr2 = ['korea','usa','china','japen','canada'];
+
+        console.log(testArr2.join())  //korea,usa,china,japen,canada
+        //아무옵션도 넣지 않고 호출하면 배열 요소 각각을 (,)로 공백 없이 묶어줌
+
+        console.log(typeof testArr2.join())  //string
+
+        //('구분자')  --> 각각의 요소를 구분하여 하나의 문자열로
+        console.log(testArr2.join('-'))  
+        console.log(testArr2.join(' '))
+        console.log(testArr2.join(', '))
+        console.log(testArr2.join('+'))
+        console.log(testArr2.join('/'))
+
+        //요소가 undefined, null이 있을때 join()메서드를 사용하면? --> 빈문자열로 연결
+        const testArr3 = ['korea','usa',undefined,'china','japen',null,'canada'];
+        console.log(testArr3.join(', '))
+
+        //배열을 거꾸로 출력하기 -->reverse()
+        const testArr4 = ['k','o','r','e','a'];
+         
+        console.log(testArr4.reverse())  //['a','e','r','o','k'] 
+
+        //[9] 조건에 맞는 첫번째 요소 찾기 --> find()
+        // - 콜백함수 사용.
+        // - 만일 값이 없다면 undefined 반환
+
+        const testArr5 = [56,34,89,100,90];
+
+        //find() vs filter() 비교,차이점
+
+        //find() 메서드 --> 첫번째 요소의 값을 반환, 더이상 순회하지 않음
+        //filter() 메서드 --> 게속 순회한다, 조건에 맞는 값을 다 찾아줌
+
+        //const rst1 = test5.find(function(){}--콜백함수)
+        // const rst1 = testArr5.find(function(ele){
+        //     return ele>=80;
+        // })
+
+        //줄임1 (화살표함수)
+        // const rst1 = testArr5.find((ele)=>{
+        //      return ele>=80;
+        //  })
+
+        //줄임2
+         const rst1 = testArr5.find(ele => ele >= 80);
+
+         console.log(rst1)  //89
+
+
+         let testArr6 = [1,2,3,4,5,6,7,8,9,10,3];
+         let count = 0;
+
+         const rst2 = testArr6.find(ele => {
+            count++;
+            return ele ==3;
+         })
+
+         console.log(`해당 메서드의 반복횟수는 = ${count}`)  //3
+         console.log(rst2)  //3
+         console.log(typeof rst2)  //number
+
+         const rst3 = testArr6.filter(ele => {
+            count++;
+            return ele ==3;
+         })
+
+         console.log(`해당 메서드의 반복횟수는 = ${count}`)  //14
+         console.log(rst3)  // [3, 3]
+         console.log(typeof rst3)  //object
+
+
+         const cars = [
+            {name: '테슬라', price:2500},
+            {name: '벤츠', price:3500},
+            {name: '테슬라', price:5500},
+            {name: '벤츠', price:6500},
+            {name: '아우디', price:4500},
+         ];
+
+        //  const searchValue = cars.find(function(ele){
+        //     return ele.price>4000
+        //  })
+
+        //console.log(searchValue)  //{name: '테슬라', price: 5500}
+
+        const searchValue = cars.find(ele => ele.price > 4000);
+             
+        console.log(searchValue)  //{name: '테슬라', price: 5500}
+
+        const searchValue2 = cars.find(ele => ele.name == '벤츠');
+             
+        console.log(searchValue2)  //{name: '벤츠', price: 3500}
+
+        // 콜백함수
+        function searchValue3(car){
+            return car.name == '테슬라'
+        }
+
+        let searchValue3 = function(car){
+            return car.name == '테슬라'
+        }
+    
+        console.log (cars.find(searchValue3))
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
